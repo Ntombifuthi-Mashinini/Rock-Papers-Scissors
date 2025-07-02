@@ -13,38 +13,50 @@
 <button onclick="playGame('scissors')">Scissors</button>
 
   <p id="result"></p>
-  <script>
-    function playGame(playerMove) {
-      const randomNumber = Math.random();
-      let computerMove = '';
+  <p>
+  <a href="https://github.com/Ntombifuthi-Mashinini/Rock-Papers-Scissors" target="_blank">
+    View the Rock, Paper, Scissors code on GitHub
+  </a>
+</p>
 
-      if (randomNumber < 1 / 3) {
-        computerMove = 'rock';
-      } else if (randomNumber < 2 / 3) {
-        computerMove = 'paper';
-      } else {
-        computerMove = 'scissors';
-      }
+<script>
+  function playGame(playerMove) {
+    const randomNumber = Math.random();
+    let computerMove = '';
 
-      let result = '';
-
-      if (playerMove === computerMove) {
-        result = "It's a tie!";
-      } else if (
-        (playerMove === 'rock' && computerMove === 'scissors') ||
-        (playerMove === 'paper' && computerMove === 'rock') ||
-        (playerMove === 'scissors' && computerMove === 'paper')
-      ) {
-        result = 'You win!';
-      } else {
-        result = 'You lose!';
-      }
-
-      document.getElementById('result').innerText =
-        `You chose ${playerMove}, computer chose ${computerMove}. ${result}`;
-
+    if (randomNumber < 1 / 3) {
+      computerMove = 'rock';
+    } else if (randomNumber < 2 / 3) {
+      computerMove = 'paper';
+    } else {
+      computerMove = 'scissors';
     }
-  </script>
+
+    let result = '';
+
+    if (playerMove === computerMove) {
+      result = "It's a tie!";
+    } else if (
+      (playerMove === 'rock' && computerMove === 'scissors') ||
+      (playerMove === 'paper' && computerMove === 'rock') ||
+      (playerMove === 'scissors' && computerMove === 'paper')
+    ) {
+      result = 'You win!';
+    } else {
+      result = 'You lose!';
+    }
+
+    const opponents = ['Livhuwa', 'Siya'];
+    const randomOpponent = opponents[Math.floor(Math.random() * opponents.length)];
+
+    document.getElementById('result').innerText =
+      `You chose ${playerMove}, ${randomOpponent} chose ${computerMove}. ${result}`;
+  }
+</script>
+
+<footer style="margin-top: 30px; font-style: italic; color: #555;">
+  Coded with ❤️ by Mommy Ntombifuthi Mashinini for fun for my babies to enjoy during school holidays.
+</footer>
 
 </body>
 </html>
