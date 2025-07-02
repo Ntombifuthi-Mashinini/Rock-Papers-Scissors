@@ -4,6 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock, Paper, Scissors</title>
+  <style>
+  body {
+    background: #FFFAE3;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    padding: 20px;
+    color: #4B4B4B;
+  }
+
+  h1 {
+    color: #FF6F61;
+    font-size: 3em;
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  #result {
+    font-weight: bold;
+    margin: 20px 0;
+    font-size: 1.5em;
+    color: #3B8EF3;
+  }
+
+  button {
+    background-color: #FFD966;
+    border: 3px solid #FF6F61;
+    border-radius: 15px;
+    color: #333;
+    font-size: 1.3em;
+    margin: 10px 15px;
+    padding: 15px 30px;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  button:hover {
+    background-color: #FF6F61;
+    color: white;
+    transform: scale(1.1);
+  }
+
+  button:active {
+    transform: scale(0.95);
+  }
+
+  #player-score, #opponent-score {
+    font-weight: bold;
+    color: #FF6F61;
+  }
+
+  #opponent-name {
+    color: #FFB347;
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+
+  footer {
+    margin-top: 40px;
+    font-style: italic;
+    color: #777;
+  }
+</style>
+
 </head>
 <body>
   <h1>Rock, Paper, Scissors</h1>
