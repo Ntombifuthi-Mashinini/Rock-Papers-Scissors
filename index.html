@@ -8,9 +8,13 @@
 <body>
   <h1>Rock, Paper, Scissors</h1>
 
+<p>Playing against: <strong id="opponent-name">???</strong></p>
+
 <button onclick="playGame('rock')">Rock</button>
 <button onclick="playGame('paper')">Paper</button>
 <button onclick="playGame('scissors')">Scissors</button>
+
+<button onclick="resetScore()">Reset Score</button>
 
   <p id="result"></p>
   <p>
@@ -20,6 +24,9 @@
 </p>
 
 <script>
+  let playerScore = 0;
+  let opponentScore = 0;
+
   function playGame(playerMove) {
     const randomNumber = Math.random();
     let computerMove = '';
@@ -42,17 +49,34 @@
       (playerMove === 'scissors' && computerMove === 'paper')
     ) {
       result = 'You win!';
+      playerScore++;
     } else {
       result = 'You lose!';
+      opponentScore++;
     }
 
     const opponents = ['Livhuwa', 'Siya'];
     const randomOpponent = opponents[Math.floor(Math.random() * opponents.length)];
 
+    document.getElementById('opponent-name').innerText = randomOpponent;
+
     document.getElementById('result').innerText =
       `You chose ${playerMove}, ${randomOpponent} chose ${computerMove}. ${result}`;
+
+    document.getElementById('player-score').innerText = playerScore;
+    document.getElementById('opponent-score').innerText = opponentScore;
+  }
+
+  function resetScore() {
+    playerScore = 0;
+    opponentScore = 0;
+    document.getElementById('player-score').innerText = playerScore;
+    document.getElementById('opponent-score').innerText = opponentScore;
+    document.getElementById('result').innerText = '';
+    document.getElementById('opponent-name').innerText = '???';
   }
 </script>
+
 
 <footer style="margin-top: 30px; font-style: italic; color: #555;">
   Coded with ❤️ by Mommy Ntombifuthi Mashinini for fun for my babies to enjoy during school holidays.
