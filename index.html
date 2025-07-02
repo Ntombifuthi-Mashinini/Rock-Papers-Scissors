@@ -8,19 +8,9 @@
 <body>
   <h1>Rock, Paper, Scissors</h1>
 
-  <button onclick="
-  const randomNumber = Math.random();
-  if (randomNumber < 1/3) {
-    console.log('rock');
-  } else if (randomNumber < 2/3) {
-    console.log('paper');
-  } else {
-    console.log('scissors');
-  }
-">Rock</button>
-
-  <button>Paper</button>
-  <button>Scissors</button>
+<button onclick="playGame('rock')">Rock</button>
+<button onclick="playGame('paper')">Paper</button>
+<button onclick="playGame('scissors')">Scissors</button>
 
   <p id="result"></p>
   <script>
@@ -52,7 +42,7 @@
 
       document.getElementById('result').innerText =
         `You chose ${playerMove}, computer chose ${computerMove}. ${result}`;
-        
+
     }
   </script>
 
